@@ -1,5 +1,5 @@
 export interface IRit {
-        ritId: 1,
+        ritId: number,
         ritNaam: string,
         ritCode: string,
         ritDatum: string,

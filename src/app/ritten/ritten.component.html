@@ -7,17 +7,24 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th>Ritcode</th>
                         <th>Ritnaam</th>
                         <th>Omschrijving</th>
                         <th>Datum</th>
+                        <th>Omschrijving</th>
+                        <th>Afstand</th>
+                        <th>p/p km</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Rit1</td>
-                        <td>Uitwedstrijd Noordwijk</td>
-                        <td>2017-01-07</td>
-                    </tr>
+                    <tr *ngFor="let rit of ritten">
+                        <td>{{ rit.ritCode }}</td>
+                        <td>{{ rit.ritNaam }}</td>
+                        <td>{{ rit.ritDatum }}</td> 
+                        <td>{{ rit.omschrijving }}</td> 
+                        <td>{{ rit.afstand }}</td> 
+                        <td>{{ rit.prijsperkilometer }}</td> 
+                    </tr>                     
                 </tbody>
             </table>
         </div>
