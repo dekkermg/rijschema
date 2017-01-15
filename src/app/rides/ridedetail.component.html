@@ -7,27 +7,27 @@
             <form #form="ngForm" novalidate>
                 <div class="form-group">
                     <label>Ritnaam</label>
-                    <input type="text" class="form-control" name="ritNaam" 
-                        [(ngModel)]="model.ritNaam">
+                    <input type="text" class="form-control" name="name" 
+                        [(ngModel)]="model.name">
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="deelnemerType" value="rijder" checked 
-                            [(ngModel)]="model.deelnemerType">
+                        <input type="radio" name="participantType" value="rijder" checked 
+                            [(ngModel)]="model.participantType">
                         Rijder
                     </label>
-                    <div *ngIf="model.deelnemerType=='rijder'">
+                    <div *ngIf="model.participantType=='rijder'">
                         <div class="form-group">
                             <label>Aantal plekken over</label>
-                            <input type="text" class="form-control" name="aantalPlekken"
-                                [(ngModel)]="model.aantalPlekken">
+                            <input type="text" class="form-control" name="nrOfSeats"
+                                [(ngModel)]="model.nrOfSeats">
                         </div>
                     </div>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="deelnemerType" value="meerijder"
-                            [(ngModel)]="model.deelnemerType">
+                        <input type="radio" name="participantType" value="meerijder"
+                            [(ngModel)]="model.participantType">
                         Meerijder
                     </label>
                 </div>

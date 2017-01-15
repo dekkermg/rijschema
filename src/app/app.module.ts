@@ -5,13 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-import { WelcomeComponent } from './model/welcome.component';
-import { RitDetailComponent } from './model/ritdetail.component';
-=======
-import { WelcomeComponent } from './home/welcome.component';
-import { RittenComponent } from './ritten/ritten.component';
->>>>>>> origin/master
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RideDetailComponent } from './rides/ridedetail.component';
+import { RidesComponent } from './rides/rides.component';
 
 @NgModule({
   imports: [
@@ -19,11 +15,8 @@ import { RittenComponent } from './ritten/ritten.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-<<<<<<< HEAD
-      { path: 'ritdetail', component: RitDetailComponent },     
-=======
-      { path: 'ritten', component: RittenComponent },
->>>>>>> origin/master
+      { path: 'ridedetail', component: RideDetailComponent },     
+      { path: 'rides', component: RidesComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
@@ -32,11 +25,8 @@ import { RittenComponent } from './ritten/ritten.component';
   declarations: [
     AppComponent,
     WelcomeComponent,
-<<<<<<< HEAD
-    RitDetailComponent
-=======
-    RittenComponent
->>>>>>> origin/master
+    RideDetailComponent,
+    RidesComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
