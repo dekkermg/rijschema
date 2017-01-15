@@ -5,7 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { WelcomeComponent } from './home/welcome.component'
+import { WelcomeComponent } from './model/welcome.component';
+import { RitDetailComponent } from './model/ritdetail.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { WelcomeComponent } from './home/welcome.component'
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
+      { path: 'ritdetail', component: RitDetailComponent },     
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }      
@@ -20,7 +22,8 @@ import { WelcomeComponent } from './home/welcome.component'
   ],
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    RitDetailComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

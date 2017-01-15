@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body"  >
+        <div class="container" >
+            <form #form="ngForm" novalidate>
+                <div class="form-group">
+                    <label>Ritnaam</label>
+                    <input type="text" class="form-control" name="ritNaam" 
+                        [(ngModel)]="model.ritNaam">
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="deelnemerType" value="rijder" checked 
+                            [(ngModel)]="model.deelnemerType">
+                        Rijder
+                    </label>
+                    <div *ngIf="model.deelnemerType=='rijder'">
+                        <div class="form-group">
+                            <label>Aantal plekken over</label>
+                            <input type="text" class="form-control" name="aantalPlekken"
+                                [(ngModel)]="model.aantalPlekken">
+                        </div>
+                    </div>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="deelnemerType" value="meerijder"
+                            [(ngModel)]="model.deelnemerType">
+                        Meerijder
+                    </label>
+                </div>
+                <button class="btn btn-primary" type="submit">Ok</button>
+            </form>
+            Model: {{ model | json }}
+            <br>
+            Angular: {{ form.value | json }}
+        </div>
+    </div>
+</div>
