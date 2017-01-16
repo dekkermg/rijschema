@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { RideDetailComponent } from './rides/ridedetail.component';
 import { RidesComponent } from './rides/rides.component';
+import { RidesService } from './services/rides.service';
 
 @NgModule({
   imports: [
@@ -28,7 +29,7 @@ import { RidesComponent } from './rides/rides.component';
     RideDetailComponent,
     RidesComponent
   ],
-  providers: [],
+  providers: [RidesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,8 @@
         {{pageTitle}}
     </div>
     <div class="panel-body">
-        <div class="table table-responsive">
+        <h3 *ngIf="ridesLoaded == false">Bezig met laden...</h3>
+        <div class="table table-responsive" *ngIf="ridesLoaded == true">
             <table class="table table-striped">
                 <thead>
                     <tr>

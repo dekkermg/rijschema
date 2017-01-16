@@ -4,7 +4,7 @@
     </div>
     <div class="panel-body"  >
         <div class="container" >
-            <form #form="ngForm" novalidate>
+            <form #form="ngForm" (submit)="submitForm()" novalidate>
                 <div class="form-group">
                     <label>Ritnaam</label>
                     <input type="text" class="form-control" name="name" 
