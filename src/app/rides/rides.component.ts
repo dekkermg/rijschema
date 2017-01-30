@@ -14,7 +14,7 @@ export class RidesComponent {
     constructor(private ridesService: RidesService) {
         this.ridesService.getRides()
             .subscribe(
-                data => { this.rides = data.rides; this.ridesLoaded = true; },
+                data => { this.rides = data; this.ridesLoaded = true; },
                 err => console.log('get error: ', err)
             );
     }

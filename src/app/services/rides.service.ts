@@ -21,7 +21,7 @@ export class RidesService {
 
     private extractRides(res: Response) {
         let body = res.json();
-        return body.data || { };
+        return body || { };
     }
 
     getRides() : Observable<any> {
