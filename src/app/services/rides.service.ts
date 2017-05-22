@@ -20,6 +20,8 @@ export class RidesService {
     }
 
     private extractRides(res: Response) {
+        console.log('extracting rides');
+        console.log('res: '+ res);
         let body = res.json();
         return body || { };
     }
@@ -32,6 +34,7 @@ export class RidesService {
 
     postRideForm(ride: Ride):Observable<any> {
         let body = JSON.stringify(ride);
+        console.log(body);
         let headers = new Headers({ 'Content-Type': 'application/json'});
         let options = new RequestOptions({headers: headers });
     

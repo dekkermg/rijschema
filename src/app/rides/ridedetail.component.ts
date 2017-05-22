@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Ride } from 'app/models/ride';
+import { Driver } from 'app/models/driver';
+import { Companion } from 'app/models/companion';
 import { UUID } from 'angular2-uuid';
 import { RidesService } from '../services/rides.service';
 import { NgForm } from '@angular/forms';
@@ -8,8 +10,8 @@ import { NgForm } from '@angular/forms';
     templateUrl: 'app/rides/ridedetail.component.html'
 })
 export class RideDetailComponent {
-    pageTitle: string = 'Rit details';
-    model = new Ride(UUID.UUID(), 'testrit', '20170120', 'testrit', 'rijder', 3);
+    pageTitle: string = "Rit details";
+    model = new Ride(UUID.UUID(), "testrit", "20170120", "testrit", "rijder", new Array<Driver>(), new Array<Companion>());
 
     constructor(private ridesService: RidesService) {        
     }

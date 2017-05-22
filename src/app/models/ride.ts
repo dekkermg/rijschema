@@ -1,3 +1,6 @@
+import { Driver } from './driver';
+import { Companion } from './companion';
+
 export class Ride {
     constructor(
         public _id: AAGUID,
@@ -5,8 +8,7 @@ export class Ride {
         public date: string,
         public description: string,
         public participantType: string,
-        public nrOfSeats: number
-    ) {
-                
-        }
+        public drivers: Driver[],
+        public companions: Companion[]
+    ) {}
 }
