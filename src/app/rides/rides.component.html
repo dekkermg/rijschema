@@ -12,18 +12,33 @@
                         <th>Ritnaam</th>
                         <th>Datum</th>
                         <th>Omschrijving</th>
-                        <th>Deelnemertype</th>
-                        <th>Aantal plekken</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr *ngFor="let ride of rides">
+                <tbody>                    
+                    <tr *ngFor="let ride of rides" (click)="onSelect(ride)">
                         <td>{{ ride._id }}</td>
                         <td>{{ ride.name }}</td>
                         <td>{{ ride.date }}</td> 
                         <td>{{ ride.descriptiont }}</td> 
-                        <td>{{ ride.participantType }}</td> 
-                        <td>{{ ride.nrOfSeats }}</td> 
+                    </tr>                     
+                </tbody>
+            </table>
+        </div>
+        <h2>Rijders</h2>
+        <div class="table table-responsive" *ngIf="ridesLoaded == true">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Naam</th>
+                        <th>Aantal plaatsen</th>
+                        <th>Opmerkingen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let driver of selectedRide.drivers">
+                        <td>{{ driver.name }}</td>
+                        <td>{{ driver.nrOfSeats }}</td>
+                        <td>{{ driver.remarks }}</td> 
                     </tr>                     
                 </tbody>
             </table>

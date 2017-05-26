@@ -3,7 +3,7 @@
         {{pageTitle}}
     </div>
     <div class="panel-body"  >
-        <div class="container" >
+        <div class="table-reduced" >
             <form #form="ngForm" (submit)="submitForm()" novalidate>
                 <div class="form-group">
                     <label>Ritnaam</label>
@@ -13,23 +13,45 @@
                 <div class="radio">
                     <label>
                         <input type="radio" name="participantType" value="rijder" checked 
-                            [(ngModel)]="model.participantType">
+                            [(ngModel)]="participantType">
                         Rijder
                     </label>
-                    <div *ngIf="model.participantType=='rijder'">
-                        <div class="form-group">
-                            <label>Aantal plekken over</label>
-                            <input type="text" class="form-control" name="nrOfSeats"
-                                [(ngModel)]="model.nrOfSeats">
-                        </div>
-                    </div>
                 </div>
                 <div class="radio">
                     <label>
                         <input type="radio" name="participantType" value="meerijder"
-                            [(ngModel)]="model.participantType">
+                            [(ngModel)]="participantType">
                         Meerijder
                     </label>
+                </div>
+
+                <div *ngIf="participantType=='rijder'">
+                    <div class="form-group">
+                        <label>Naam rijder</label>
+                        <input type="text" class="form-control" name="driverName"
+                            [(ngModel)]="driver.name">
+                    </div>
+                </div>                
+                <div *ngIf="participantType=='rijder'">
+                    <div class="form-group">
+                        <label>Aantal plekken over</label>
+                        <input type="text" class="form-control" name="nrOfSeats"
+                            [(ngModel)]="driver.nrOfSeats">
+                    </div>
+                </div>
+                <div *ngIf="participantType=='meerijder'">
+                    <div class="form-group">
+                        <label>Naam meerijder</label>
+                        <input type="text" class="form-control" name="companionName"
+                            [(ngModel)]="companion.name">
+                    </div>
+                </div>                
+                <div *ngIf="participantType=='meerijder'">
+                    <div class="form-group">
+                        <label>Ik wil meerijden met</label>
+                        <input type="text" class="form-control" name="companionDriverName"
+                            [(ngModel)]="driver.name">
+                    </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Ok</button>
             </form>

@@ -7,7 +7,6 @@ export class Ride {
         public name: string,
         public date: string,
         public description: string,
-        public participantType: string,
         public drivers: Driver[],
         public companions: Companion[]
     ) {}
