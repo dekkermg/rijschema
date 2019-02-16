@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { Ride } from '../models/ride';
-import { Driver } from 'app/models/driver';
-import { Companion } from 'app/models/companion';
-import { UUID } from 'angular2-uuid';
+import { Driver } from '../models/driver';
+import { Companion } from '../models/companion';
+import { Guid } from "guid-typescript";
 import { RidesService } from '../services/rides.service';
 
 @Component({
-    templateUrl: 'app/rides/rides.component.html'
+    templateUrl: 'rides.component.html'
 })
 export class RidesComponent {
     public pageTitle: string = 'Ritten';
     ridesLoaded: boolean = false;
     rides: Ride[] = [];
-    selectedRide = new Ride(UUID.UUID(), "testrit", "20170120", "testrit", new Array<Driver>(), new Array<Companion>());
+    selectedRide = new Ride(Guid.create(), "testrit", "20170120", "testrit", new Array<Driver>(), new Array<Companion>());
 
     constructor(private ridesService: RidesService) {
         this.ridesService.getRides()

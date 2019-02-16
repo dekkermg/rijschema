@@ -1,9 +1,10 @@
 import { Driver } from './driver';
 import { Companion } from './companion';
+import { Guid } from "guid-typescript";
 
 export class Ride {
     constructor(
-        public _id: AAGUID,
+        public _id: Guid,
         public name: string,
         public date: string,
         public description: string,

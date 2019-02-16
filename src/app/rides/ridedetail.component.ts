@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { Ride } from 'app/models/ride';
-import { Driver } from 'app/models/driver';
-import { Companion } from 'app/models/companion';
-import { UUID } from 'angular2-uuid';
+import { Ride } from '../models/ride';
+import { Driver } from '../models/driver';
+import { Companion } from '../models/companion';
+import { Guid } from "guid-typescript";
 import { RidesService } from '../services/rides.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-    templateUrl: 'app/rides/ridedetail.component.html'
+    templateUrl: 'ridedetail.component.html'
 })
 export class RideDetailComponent {
     pageTitle: string = "Rit details";
-    model = new Ride(UUID.UUID(), "testrit", "20170120", "testrit", new Array<Driver>(), new Array<Companion>());
+    model = new Ride(Guid.create(), "testrit", "20170120", "testrit", new Array<Driver>(), new Array<Companion>());
     driver = new Driver("Martin","",4, new Array<Companion>());
     companion = new Companion("Liam", "");
     participantType: string;
